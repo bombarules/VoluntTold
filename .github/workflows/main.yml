@@ -1,4 +1,4 @@
-name: Build Android APK
+name: Build VoluntTold APK
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
       - name: Find the Android project folder
         id: proj
         run: |
-          f=$(find . -name settings.gradle -not -path './.git/*' | head -1)
+          f=$(find . -name settings.gradle -not -path './.git/*' | awk '{print length, $0}' | sort -n | head -1 | cut -d' ' -f2-)
           if [ -z "$f" ]; then
             echo "::error::No settings.gradle found. Upload the project files (settings.gradle, build.gradle, app folder) to the repository."
             echo "Files in the repository:"; find . -not -path './.git/*' -type f | head -50
@@ -47,6 +47,6 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: FieldReports-debug-apk
+          name: VoluntTold-APK
           path: ${{ steps.proj.outputs.dir }}/app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
