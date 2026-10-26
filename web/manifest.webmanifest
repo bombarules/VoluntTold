@@ -1,0 +1,15 @@
+{
+  "name": "VoluntTold",
+  "short_name": "VoluntTold",
+  "description": "Park, pool and field reports with photos",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#faf6fd",
+  "theme_color": "#b4a5f0",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
